@@ -91,20 +91,19 @@ The frontend will be running on `http://localhost:3000`
 
 ### 🏠 Home Page
 
-![Home](screenshots/Home.png)
+![Home Page](./Screenshots/Home.png)
 
 ### 🔐 Login Page
 
-![Login](screenshots/Login.png)
+![Login Page](./Screenshots/Login.png)
 
 ### 📝 Sign Up Page
 
-![Signup](screenshots/Signup.png)
+![Sign Up Page](./Screenshots/Signup.png)
 
 ### ➕ Add Resource
 
-![Add Resource](screenshots/AddResource.png)
-
+![Add Resource](./Screenshots/AddResource.png)
 ## 🔗 API Endpoints
 
 ### Authentication
