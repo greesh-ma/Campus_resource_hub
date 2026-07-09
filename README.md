@@ -1,8 +1,36 @@
 # Campus Resource Hub
 
-A full-stack web application for sharing and discovering campus learning resources. Built with React, Express.js, and MongoDB.
+A **full-stack web application** that enables students to discover, share, and organize campus learning resources in one place. The platform provides secure user authentication, resource sharing, voting, and ranking features to help students easily access high-quality educational content.
 
-## Project Structure
+## 📌 Features
+- 🔐 Secure User Authentication (JWT)
+- 📚 Share and Discover Learning Resources
+- 👍 Upvote Resources
+- 📊 Resource Ranking Algorithm
+- 📄 Pagination for Resources
+- 🛡 Protected Routes
+- 🏷 Resource Categories
+- 📱 Responsive User Interface
+
+## 🛠 Tech Stack
+
+### Frontend
+- React.js
+- React Router DOM
+- Vite
+- CSS
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcrypt
+
+
+
+## 📁 Project Structure
 
 ```
 /backend  - Express.js server
@@ -39,7 +67,7 @@ mongod
 
 **Start the backend server**:
 ```bash
-npm run dev
+npm start
 ```
 
 The backend will be running on `http://localhost:5000`
@@ -59,42 +87,43 @@ npm run dev
 
 The frontend will be running on `http://localhost:3000`
 
-## Features
+## 📷 Screenshots
 
-- **User Authentication**: Sign up, login with JWT tokens
-- **Resource Sharing**: Create and share learning resources
-- **Ranking Algorithm**: Resources ranked by upvotes and recency (score = upvotes / (days + 1))
-- **Voting System**: Upvote resources to help others discover valuable content
-- **Pagination**: Browse resources with paginated results
-- **Protected Routes**: Add resources only when authenticated
-- **Categories**: Organize resources by category (Tutorial, Documentation, Tool, etc.)
+### 🏠 Home Page
 
-## API Endpoints
+![Home](screenshots/Home.png)
+
+### 🔐 Login Page
+
+![Login](screenshots/Login.png)
+
+### 📝 Sign Up Page
+
+![Signup](screenshots/Signup.png)
+
+### ➕ Add Resource
+
+![Add Resource](screenshots/AddResource.png)
+
+## 🔗 API Endpoints
 
 ### Authentication
-- `POST /api/auth/signup` - Register a new user
-- `POST /api/auth/login` - Login user
-- `GET /api/auth/me` - Get current user info (protected)
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/auth/signup` | Register User |
+| POST | `/api/auth/login` | Login User |
+| GET | `/api/auth/me` | Current User |
 
 ### Resources
-- `GET /api/resources?page=1&limit=10` - Get paginated resources
-- `POST /api/resources` - Create new resource (protected)
-- `POST /api/resources/:id/vote` - Vote on a resource (protected)
 
-## Tech Stack
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/resources?page=1&limit=10` | Get Resources |
+| POST | `/api/resources` | Add Resource |
+| POST | `/api/resources/:id/vote` | Vote Resource |
 
-**Backend:**
-- Node.js
-- Express.js
-- MongoDB
-- JWT
-- bcrypt
 
-**Frontend:**
-- React.js
-- React Router DOM
-- Vite
-- Plain CSS
 
 ## Development Notes
 
@@ -104,7 +133,7 @@ The frontend will be running on `http://localhost:3000`
 - MongoDB indexes are created automatically on startup
 - CORS is configured to allow requests from the frontend
 
-## Database Collections
+## 🗄 Database Collections
 
 ### users
 - `_id` - ObjectId
@@ -129,6 +158,33 @@ The frontend will be running on `http://localhost:3000`
 - `userId` - ObjectId (reference to user)
 - `createdAt` - Date
 
+## 💡 Ranking Algorithm
+
+Resources are ranked using:
+
+```
+Score = Upvotes / (Days Since Posted + 1)
+```
+
+This ensures newer, high-quality resources appear higher while still rewarding popular content.
+
+---
+## 🎯 Skills Demonstrated
+
+- Full Stack Web Development
+- React.js
+- Express.js
+- Node.js
+- MongoDB
+- REST API Development
+- JWT Authentication
+- CRUD Operations
+- Database Design
+- API Integration
+- Responsive UI Design
+- Git & GitHub
+
+---
 ## Troubleshooting
 
 **MongoDB Connection Error**: Ensure MongoDB is running and MONGODB_URI is correct in `.env`
@@ -137,6 +193,6 @@ The frontend will be running on `http://localhost:3000`
 
 **Port Already in Use**: Change the PORT in backend `.env` or terminate the process using that port
 
-## License
+## 📄 License
 
-MIT
+This project is licensed under the **MIT License**.
