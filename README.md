@@ -184,6 +184,14 @@ This ensures newer, high-quality resources appear higher while still rewarding p
 - Git & GitHub
 
 ---
+## Live Demo
+
+Frontend:
+https://campusresourcehubfrontend.netlify.app/
+
+Backend API:
+https://campus-resource-hub-backend.onrender.com
+
 ## Troubleshooting
 
 **MongoDB Connection Error**: Ensure MongoDB is running and MONGODB_URI is correct in `.env`
