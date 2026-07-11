@@ -32,38 +32,44 @@ const apiCall = async (endpoint, options = {}) => {
 // 🔐 Auth APIs
 export const authAPI = {
   signup: (email, password, name) =>
-    apiCall('/auth/signup', {
+    apiCall('/api/auth/signup', {
       method: 'POST',
       body: JSON.stringify({ email, password, name })
     }),
 
   login: (email, password) =>
-    apiCall('/auth/login', {
+    apiCall('/api/auth/login', {
       method: 'POST',
       body: JSON.stringify({ email, password })
     }),
 
-  getMe: () => apiCall('/auth/me', { method: 'GET' })
+  getMe: () => apiCall('/api/auth/me', { method: 'GET' })
 };
 
 // 📚 Resource APIs
 export const resourceAPI = {
   // GET resources with sorting
+  // getResources: (page = 1, limit = 10, sort = "trending",subject="ALL") =>
+  //   apiCall(`/resources?page=${page}&limit=${limit}&sort=${sort}&subject=${subject}`, {
   getResources: (page = 1, limit = 10, sort = "trending",subject="ALL") =>
-    apiCall(`/resources?page=${page}&limit=${limit}&sort=${sort}&subject=${subject}`, {
+    apiCall(`/api/resources?page=${page}&limit=${limit}&sort=${sort}&subject=${subject}`, {
       method: 'GET'
     }),
 
   // ✅ FIXED: now accepts object
+  // createResource: (data) =>
+  //   apiCall('/resources', {
   createResource: (data) =>
-    apiCall('/resources', {
+    apiCall('/api/resources', {
       method: 'POST',
       body: JSON.stringify(data)
     }),
 
   // Vote
+  // voteResource: (id) =>
+  //   apiCall(`/resources/${id}/vote`, {
   voteResource: (id) =>
-    apiCall(`/resources/${id}/vote`, {
+    apiCall(`/api/resources/${id}/vote`, {
       method: 'POST'
     })
 };
